@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Cute Japanese Strawberry Cake Making Game</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff4f4;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #754b50;
+}
+header {
+  padding: 25px 10px;
+  font-size: 23px;
+  font-weight: bold;
+}
+img {
+  width: 85%;
+  max-width: 400px;
+  border-radius: 15px;
+  margin: 15px auto;
+}
+button {
+  background: #f3a6b5;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 14px 35px;
+  font-size: 17px;
+  margin: 12px;
+}
+#game { display: none; }
+</style>
+</head>
+<body>
 
+<header>🍓 Strawberry Cake Studio 🍰</header>
+
+<div id="start">
+  <p>Welcome to my little cake shop!</p>
+  <p>Let's make a strawberry cake together.</p>
+  <button onclick="startGame()">START GAME</button>
+</div>
+
+<div id="game">
+  <h2>Let's make a cake!</h2>
+  <p id="message">Choose your ingredients!</p>
+  <button onclick="choose('🍓 Strawberry')">🍓 Strawberry</button>
+  <button onclick="choose('🥛 Milk')">🥛 Milk</button>
+  <button onclick="choose('🍰 Cream')">🍰 Cream</button>
+  <p id="result"></p>
+  <button onclick="finish()">FINISH CAKE</button>
+</div>
+
+<script>
+function startGame() {
+  document.getElementById('start').style.display = 'none';
+  document.getElementById('game').style.display = 'block';
+}
+function choose(item) {
+  document.getElementById('result').innerText += item + ' ';
+}
+function finish() {
+  document.getElementById('message').innerText =
+  'Your strawberry cake is ready! 🍓';
+}
+</script>
+
+</body>
+</html>
